@@ -117,7 +117,8 @@ function show_manual()
 
 }
 
-function show_random(){
+function show_random()
+{
     $random_number_array = range(0, $_POST['random']);
     shuffle($random_number_array);
     $random_number_array = array_slice($random_number_array, 0, $_POST['random']);
@@ -127,12 +128,14 @@ function show_random(){
     print_r($_POST['select']($random_number_array));
 }
 
-function show_file(){
+function show_file()
+{
     echo "No hecho";
 }
 
-function show_predeterminated(){
-    $det = array(5,2,6,1,5,9,11,94,72,36);
+function show_predeterminated()
+{
+    $det = array(5, 2, 6, 1, 5, 9, 11, 94, 72, 36);
     echo "Datos introducido: " . $_POST['predeter'] . "<br><br>";
     time_counter($_POST['select'], $det);
     print_r($_POST['select']($det));
@@ -309,7 +312,7 @@ function show_predeterminated(){
             <div name="predeter" class="predDiv box">
                 Números predeterminados: 5, 2, 6, 1, 5, 9, 11, 94, 72, 36
             </div>
-            <input class="form-control" style="display: none" name="predeter" placeholder="7">
+            <input class="form-control" style="display: none" name="predeter">
 
 
             <button type="submit" class="btn btn-primary mb-2">Ordenar</button>
@@ -337,10 +340,6 @@ function show_predeterminated(){
         if (isset($_POST['predeter'])) {
             show_predeterminated();
         }
-
-
-
-
         ?>
     </div>
 </div>
